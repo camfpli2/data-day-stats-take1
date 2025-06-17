@@ -30,16 +30,11 @@ function setup() {          //this function runs once upon startup
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
   dataset=data.getColumn(0);
-  console.log(dataset[0]);
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
        dtitle = dataset.shift();
   }
-  datalist=sortListAscending(dataset);
-  sample=datalist.map(parseFloat);
-  xmin=floor(datalist[0]);                  //integer value thats lower than data's min
-  xmax=ceil(datalist[datalist.length-1]);    //integer value.  
-  binWidth=((xmax-xmin)/numBars);      //INTERVAL of data values in each bin
+  processData();  
   calculateFiveNumber();
   drawControls();
   grouper();
@@ -49,6 +44,14 @@ function setup() {          //this function runs once upon startup
   boxplot();
   histogramSpecs();
   
+}
+
+function processData(){
+  datalist=sortListAscending(dataset);
+  sample=datalist.map(parseFloat);
+  xmin=floor(datalist[0]);                  //integer value thats lower than data's min
+  xmax=ceil(datalist[datalist.length-1]);    //integer value.  
+  binWidth=((xmax-xmin)/numBars);      //INTERVAL of data values in each bin
 }
 
 function isNumber(variable) {
@@ -307,6 +310,10 @@ class control{
         boxplot();
         histogramSpecs();
       }
+     else if(this.txt==="Enter Your Own"){
+        dataset=[];
+         processData();
+         axes();
     }
   }
   
