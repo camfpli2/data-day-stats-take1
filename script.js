@@ -30,7 +30,7 @@ function setup() {          //this function runs once upon startup
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
   dataset=data.getColumn(0);
-    console.log(dataset[0]);
+  console.log(dataset[0]);
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
        dtitle = dataset.shift();
