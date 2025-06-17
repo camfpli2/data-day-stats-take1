@@ -1,4 +1,4 @@
-var butColor=[210,215,225];
+var butColor=[210,225,225];
 var datalist;
 var xmin;
 var xmax;
@@ -43,7 +43,6 @@ function setup() {          //this function runs once upon startup
   histogram();
   boxplot();
   histogramSpecs();
-    console.log("hi");
   
 }
 
