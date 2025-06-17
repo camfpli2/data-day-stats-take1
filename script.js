@@ -1,4 +1,4 @@
-var butColor=[210,225,225];
+var butColor=[10,25,25];
 var datalist;
 var xmin;
 var xmax;
