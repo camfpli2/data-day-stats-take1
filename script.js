@@ -316,6 +316,7 @@ class control{
          axes();
     }
   }
+  }
   
   drawit(){
     fill(this.rgb);
