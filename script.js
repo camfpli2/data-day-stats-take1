@@ -13,6 +13,7 @@ var yScale;
 var maxFreq;
 var controls=[];
 var upperCuttoffs;
+var title;
 
 function preload(){
     data = loadTable("1ex60beans.csv", "csv");
@@ -29,6 +30,10 @@ function setup() {          //this function runs once upon startup
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
   dataset=data.getColumn(0);
+  var possTitle=isNumber(dataset[0]);
+  if (possTitle===false){
+       title = myArray.shift();
+  }
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
   xmin=floor(datalist[0]);                  //integer value thats lower than data's min
@@ -43,6 +48,10 @@ function setup() {          //this function runs once upon startup
   boxplot();
   histogramSpecs();
   
+}
+
+function isNumber(variable) {
+  return typeof variable === 'number' && !isNaN(variable) && Number.isFinite(variable);
 }
 
 function histogramSpecs(){
