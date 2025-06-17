@@ -32,7 +32,7 @@ function setup() {          //this function runs once upon startup
   dataset=data.getColumn(0);
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
-       title = myArray.shift();
+       title = dataset.shift();
   }
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
