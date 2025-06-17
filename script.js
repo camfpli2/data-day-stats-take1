@@ -43,6 +43,7 @@ function setup() {          //this function runs once upon startup
   histogram();
   boxplot();
   histogramSpecs();
+    console.log("hi");
   
 }
 
