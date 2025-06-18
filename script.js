@@ -320,7 +320,8 @@ class control{
   
   drawit(){
     fill(this.rgb);
-      console.log(this.rgb);
+    strokeWeight(4);
+    stroke(255,30,40);
     rect(this.x, this.y, this.w, this.h, 4);
     fill(0,0,200);
     textSize(20)
