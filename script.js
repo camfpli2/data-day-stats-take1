@@ -320,10 +320,11 @@ class control{
   
   drawit(){
     fill(this.rgb);
-    strokeWeight(4);
+    strokeWeight(1);
     stroke(255,30,40);
     rect(this.x, this.y, this.w, this.h, 4);
     fill(0,0,200);
+     noStroke();
     textSize(20)
     textAlign(CENTER,CENTER);
     text(this.txt,this.x+this.w/2, this.y+this.h/2)
