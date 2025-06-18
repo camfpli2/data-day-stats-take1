@@ -16,8 +16,8 @@ var upperCuttoffs;
 var dtitle;
 
 function preload(){
-    data = loadTable("1ex60beans.csv", "csv");
-   //data = loadTable("greenhouse-gas-emissions.csv", "csv");
+   // data = loadTable("1ex60beans.csv", "csv");
+   data = loadTable("greenhouse-gas-emissions.csv", "csv");
 
 }
 
@@ -29,7 +29,7 @@ function setup() {          //this function runs once upon startup
   controls[1]=new control(170,5,160,72,"Enter Your Own",true,butColor);
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
-  dataset=data.getColumn(0);
+  dataset=data.getColumn(4);
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
        dtitle = dataset.shift();
