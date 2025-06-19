@@ -87,7 +87,6 @@ function calculateFiveNumber(){
   var medi; var q1; var q3;
   var n=datalist.length;
   if(n%2===0){   //  n is even
-    console.log((sample[n/2-1]+sample[n/2])/2)
     medi=(sample[n/2-1]+sample[n/2])/2;
     
     if((n/2)%2===0){      //      upper and lower half has even n
