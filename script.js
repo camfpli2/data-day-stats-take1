@@ -206,7 +206,7 @@ function axes(){
   rect(120,120,880,600);
   
   fill(230,10,10);
-  strokeWeight(2);
+  strokeWeight(1);
   stroke(255,30,40);
   line(120,120,120,720);
   line(150,720,950,720);
