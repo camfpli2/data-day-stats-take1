@@ -212,7 +212,7 @@ function axes(){
     stroke(255,30,40);
     line(115,718-d*yScale,125,718-d*yScale);
     noStroke();
-    if(d%whichLabels===0)(text(d,110,718-d*yScale);}
+    if(d%whichLabels===0){text(d,110,718-d*yScale);}
   }
   textAlign(CENTER,CENTER);
 
