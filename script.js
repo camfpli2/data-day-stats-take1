@@ -212,14 +212,14 @@ function axes(){
   line(150,720,950,720);
   textSize(20);
   textAlign(RIGHT,CENTER);
-  for(var d=0;d<=maxFreq;d++){
+  for(var d=0;d<=maxFreq+1;d++){
     if(d%whichTicks===0){
        stroke(255,30,40);
        strokeWeight(1);
        line(115,718-d*yScale,125,718-d*yScale);
     }
     if(d%whichLabels===0){  
-       strokeWeight(3);
+       strokeWeight(2);
        line(115,718-d*yScale,125,718-d*yScale);
        noStroke();
        text(d,110,718-d*yScale);
@@ -230,6 +230,7 @@ function axes(){
   var counter=0;
   for(var g=150;g<=950;g+=(800/numBars)){  //labelling major grid values which start and end each histogram bin
     stroke(255,30,40);
+     strokeWeight(2);
     line(g,715,g,725);
     noStroke();
     text(numberRight(xmin+counter*binWidth),g,740);
