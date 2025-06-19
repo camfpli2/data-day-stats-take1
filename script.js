@@ -162,7 +162,7 @@ function getYScale(){
    else {whichLabels=ceil(25/yScale);}
 
    if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
-   else{whichTicks=ceil(2/yScale);}
+   else{whichTicks=ceil(4/yScale);}
 }
 
 
@@ -214,6 +214,8 @@ function axes(){
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
     if(d%whichTicks===0){
+       if(d%whichLabels===0){strokeWeight(3);}
+       else{strokeWeight(1);}
        stroke(255,30,40);
        line(115,718-d*yScale,125,718-d*yScale);
     }
