@@ -15,6 +15,7 @@ var controls=[];
 var upperCuttoffs;
 var dtitle;
 var whichLabels;
+var whichTicks;
 
 function preload(){
    // data = loadTable("1ex60beans.csv", "csv");
@@ -159,6 +160,9 @@ function getYScale(){
   yScale=(500/maxFreq);   //number of pixels that will represent a freqency of 1.
    if(yScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
    else {whichLabels=ceil(25/yScale);}
+
+   if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
+   else{whichTicks=ceil(2/yScale);}
 }
 
 
@@ -202,17 +206,21 @@ function axes(){
   rect(120,120,880,600);
   
   fill(230,10,10);
-  strokeWeight(4);
+  strokeWeight(2);
   stroke(255,30,40);
   line(120,120,120,720);
   line(150,720,950,720);
   textSize(20);
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
-    stroke(255,30,40);
-    line(115,718-d*yScale,125,718-d*yScale);
-    noStroke();
-    if(d%whichLabels===0){text(d,110,718-d*yScale);}
+    if(d%whichTicks===0){
+       stroke(255,30,40);
+       line(115,718-d*yScale,125,718-d*yScale);
+    }
+    if(d%whichLabels===0){    
+       noStroke();
+       text(d,110,718-d*yScale);
+    }
   }
   textAlign(CENTER,CENTER);
 
