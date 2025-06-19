@@ -14,6 +14,7 @@ var maxFreq;
 var controls=[];
 var upperCuttoffs;
 var dtitle;
+var whichLabels;
 
 function preload(){
    // data = loadTable("1ex60beans.csv", "csv");
@@ -157,6 +158,8 @@ function getYScale(){
     }
   }
   yScale=(500/maxFreq);   //number of pixels that will represent a freqency of 1.
+   if(yScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
+   else {whichLabels=ceil(25/yScale);}
 }
 
 
@@ -210,7 +213,7 @@ function axes(){
     stroke(255,30,40);
     line(115,718-d*yScale,125,718-d*yScale);
     noStroke();
-    text(d,110,718-d*yScale);
+    if(d%whichLabels===0)(text(d,110,718-d*yScale);}
   }
   textAlign(CENTER,CENTER);
 
