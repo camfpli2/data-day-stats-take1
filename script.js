@@ -216,7 +216,7 @@ function axes(){
     if(d%whichTicks===0){
        stroke(255,30,40);
        strokeWeight(1);
-       line(115,718-d*yScale,125,718-d*yScale);
+     //  line(115,718-d*yScale,125,718-d*yScale);
     }
     if(d%whichLabels===0){  
        strokeWeight(2);
