@@ -214,12 +214,12 @@ function axes(){
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
     if(d%whichTicks===0){
-       if(d%whichLabels===0){strokeWeight(3);}
-       else{strokeWeight(1);}
        stroke(255,30,40);
        line(115,718-d*yScale,125,718-d*yScale);
     }
-    if(d%whichLabels===0){    
+    if(d%whichLabels===0){  
+       strokeWeight(3);
+       line(115,718-d*yScale,125,718-d*yScale);
        noStroke();
        text(d,110,718-d*yScale);
     }
