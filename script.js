@@ -18,9 +18,9 @@ var whichLabels;
 var whichTicks;
 
 function preload(){
-    data = loadTable("1ex60beans.csv", "csv");
-  // data = loadTable("greenhouse-gas-emissions.csv", "csv");
-
+    //data = loadTable("1ex60beans.csv", "csv");
+   // data = loadTable("greenhouse-gas-emissions.csv", "csv");
+   data=loadTable("greenhouse-gas-emissions.csv", "csv");
 }
 
 
