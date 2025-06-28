@@ -73,6 +73,7 @@ function histogramSpecs(){
   noStroke();
   textSize(30);
   text("Bars: "+numBars,1050,150);
+    
 }
 
 function boxplot(){
@@ -168,11 +169,6 @@ function getYScale(){
   yScale=(500/maxFreq);   //number of pixels that will represent a freqency of 1.
    if(yScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
    else {whichLabels=ceil(25/yScale);}
-
-
-
-   //if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
-   //else{whichTicks=ceil(4/yScale);}
 }
 
 
@@ -197,13 +193,7 @@ function grouper(){
     for(var b=0;b<upperCuttoffs.length;b++){
       if(sample[a]<upperCuttoffs[b]){freqs[b]++;break;}
     }
-  }
-
-  
-  
-  
-  
-  
+  }  
 }
 
 
@@ -221,11 +211,6 @@ function axes(){
   textSize(20);
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
-    // if(d%whichTicks===0){
-    //    stroke(255,30,40);
-    //    strokeWeight(1);
-    //    line(115,718-d*yScale,125,718-d*yScale);
-    // }
     if(d%whichLabels===0){ 
        stroke(255,30,40);
        strokeWeight(2);
