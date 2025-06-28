@@ -223,7 +223,8 @@ function axes(){
     //    strokeWeight(1);
     //    line(115,718-d*yScale,125,718-d*yScale);
     // }
-    if(d%whichLabels===0){  
+    if(d%whichLabels===0){ 
+       stroke(255,30,40);
        strokeWeight(2);
        line(115,718-d*yScale,125,718-d*yScale);
        noStroke();
@@ -240,7 +241,7 @@ function axes(){
     strokeWeight(2);
     line(g,715,g,725);
     noStroke();
-    if(xPixelTracker>125){
+    if(xPixelTracker>125||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
         xPixelTracker=0;
         pixCounter=0;
@@ -252,7 +253,7 @@ function axes(){
   for (var j=150;j<950;j+=(80/numBars)){     //10 minor grid lines between the labelled values
     stroke(255,30,40);
     strokeWeight(1);
-    //line(j,715,j,725);
+    line(j,715,j,725);
   }
 
 
