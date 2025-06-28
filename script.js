@@ -7,6 +7,7 @@ var binWidth;
 var freqs=[];
 var data;
 var dataset;
+var sample;
 var fiveNumberSummary=[];
 var numBars=10;
 var xScale;
