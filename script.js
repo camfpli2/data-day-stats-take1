@@ -23,7 +23,10 @@ function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
    // data = loadTable("greenhouse-gas-emissions.csv", "csv");
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
-    data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
+   // data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
+  data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+
+    
 }
 
 
