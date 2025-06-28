@@ -239,10 +239,12 @@ function axes(){
   for(var g=150;g<=950;g+=(800/numBars)){  //labelling major grid values which start and end each histogram bin
     stroke(255,30,40);
     strokeWeight(2);
-    line(g,715,g,725);
+    if(numBars<=50){line(g,715,g,725);}
+
     noStroke();
     if(xPixelTracker>125||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
+        if(numBars>50){line(g,715,g,725);}
         xPixelTracker=0;
         pixCounter=0;
         }
@@ -253,7 +255,7 @@ function axes(){
   for (var j=150;j<950;j+=(80/numBars)){     //10 minor grid lines between the labelled values
     stroke(255,30,40);
     strokeWeight(1);
-    line(j,715,j,725);
+    if(numBars<=30){line(j,715,j,725);}
   }
 
 
