@@ -166,8 +166,7 @@ function getYScale(){
    if(yScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
    else {whichLabels=ceil(25/yScale);}
 
-   if(xScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
-   else {whichLabels=ceil(25/yScale);}
+
 
    //if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
    //else{whichTicks=ceil(4/yScale);}
