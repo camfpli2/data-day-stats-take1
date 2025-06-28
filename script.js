@@ -67,7 +67,7 @@ function processData(){
     }
     console.log(datalist);
   datalist=sortListAscending(datalist);
-  //sample=datalist.map(parseFloat);
+  sample=datalist.map(parseFloat);
   //console.log(sample)
   xmin=floor(datalist[0]);                  //integer value thats lower than data's min
   xmax=ceil(datalist[datalist.length-1]);    //integer value.  
