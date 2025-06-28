@@ -64,6 +64,7 @@ function processData(){
             dataset.splice(g,1);
         }
     }
+    console.log(dataset);
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
   console.log(sample)
