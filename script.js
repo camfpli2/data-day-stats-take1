@@ -9,13 +9,15 @@ var data;
 var dataset;
 var fiveNumberSummary=[];
 var numBars=10;
+var xScale;
 var yScale;
 var maxFreq;
 var controls=[];
 var upperCuttoffs;
 var dtitle;
 var whichLabels;
-var whichTicks;
+var whichXLabels;
+//var whichTicks;
 
 function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
@@ -23,6 +25,7 @@ function preload(){
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
     data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
 }
+
 
 
 function setup() {          //this function runs once upon startup
@@ -158,12 +161,16 @@ function getYScale(){
       maxFreq=freqs[j];
     }
   }
+  xScale=(1);
   yScale=(500/maxFreq);   //number of pixels that will represent a freqency of 1.
    if(yScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
    else {whichLabels=ceil(25/yScale);}
 
-   if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
-   else{whichTicks=ceil(4/yScale);}
+   if(xScale>=25){whichLabels=1;}   //whichLabels will be the aritmetic seq d for the indexes to be labelled
+   else {whichLabels=ceil(25/yScale);}
+
+   //if(yScale>=2){whichTicks=1;}   //whichTicks will be the aritmetic seq d for the indexes to be hashed
+   //else{whichTicks=ceil(4/yScale);}
 }
 
 
@@ -171,9 +178,7 @@ function histogram(){
   fill(140,200,200);
   for(z=0;z<numBars;z++){
     rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]));
-  }
-
-  
+  }  
 }
 
 
@@ -214,11 +219,11 @@ function axes(){
   textSize(20);
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
-    if(d%whichTicks===0){
-       stroke(255,30,40);
-       strokeWeight(1);
-     //  line(115,718-d*yScale,125,718-d*yScale);
-    }
+    // if(d%whichTicks===0){
+    //    stroke(255,30,40);
+    //    strokeWeight(1);
+    //    line(115,718-d*yScale,125,718-d*yScale);
+    // }
     if(d%whichLabels===0){  
        strokeWeight(2);
        line(115,718-d*yScale,125,718-d*yScale);
@@ -229,18 +234,26 @@ function axes(){
   textAlign(CENTER,CENTER);
 
   var counter=0;
+  var xPixelTracker=0;
+  var pixCounter=0;
   for(var g=150;g<=950;g+=(800/numBars)){  //labelling major grid values which start and end each histogram bin
     stroke(255,30,40);
-     strokeWeight(3);
+    strokeWeight(2);
     line(g,715,g,725);
     noStroke();
-    text(numberRight(xmin+counter*binWidth),g,740);
+    if(xPixelTracker>125){
+        text(numberRight(xmin+counter*binWidth),g,740);
+        xPixelTracker=0;
+        pixCounter=0;
+        }
     counter++;
+    pixCounter++;  
+    xPixelTracker+=pixCounter*(800/numBars);
   }
   for (var j=150;j<950;j+=(80/numBars)){     //10 minor grid lines between the labelled values
     stroke(255,30,40);
     strokeWeight(1);
-    line(j,715,j,725);
+    //line(j,715,j,725);
   }
 
 
