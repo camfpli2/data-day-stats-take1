@@ -7,6 +7,7 @@ var binWidth;
 var freqs=[];
 var data;
 var dataset;
+var datalist=[];
 var sample;
 var fiveNumberSummary=[];
 var numBars=10;
@@ -59,13 +60,12 @@ function setup() {          //this function runs once upon startup
 }
 
 function processData(){
-    var distance=dataset.length;
-    for(var g=0;g<distance;g++){
-        if(dataset[g]===''){
-            dataset.splice(g,1);
+    for(var g=0;g<dataset.length;g++){
+        if(dataset[g]!==''){
+            datalist.push(dataset[g]);
         }
     }
-    console.log(dataset);
+    console.log(datalist);
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
   console.log(sample)
