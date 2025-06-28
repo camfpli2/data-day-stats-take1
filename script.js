@@ -23,8 +23,8 @@ function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
    // data = loadTable("greenhouse-gas-emissions.csv", "csv");
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
-    data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
- // data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+  //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
+  data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
 
     
 }
@@ -38,7 +38,7 @@ function setup() {          //this function runs once upon startup
   controls[1]=new control(170,5,160,72,"Enter New Data",true,butColor);
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
-  dataset=data.getColumn(1);
+  dataset=data.getColumn(0);
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
        dtitle = dataset.shift();
@@ -241,7 +241,10 @@ function axes(){
     noStroke();
     if(xPixelTracker>125||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
-        if(numBars>50){line(g,715,g,725);}
+        if(numBars>50){    
+            stroke(255,30,40);
+            line(g,715,g,725);
+        }
         xPixelTracker=0;
         pixCounter=0;
         }
