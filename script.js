@@ -59,6 +59,11 @@ function setup() {          //this function runs once upon startup
 }
 
 function processData(){
+    for(var g=0;g<dataset.length;g++){
+        if(isNumber(dataset[g])===false){
+            dataset.splice(g,1);
+        }
+    }
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
   console.log(sample)
