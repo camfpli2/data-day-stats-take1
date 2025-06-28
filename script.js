@@ -59,7 +59,8 @@ function setup() {          //this function runs once upon startup
 }
 
 function processData(){
-    for(var g=0;g<dataset.length;g++){
+    var distance=dataset.length;
+    for(var g=0;g<distance;g++){
         if(dataset[g]===''){
             dataset.splice(g,1);
         }
