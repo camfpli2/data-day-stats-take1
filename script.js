@@ -57,6 +57,7 @@ function setup() {          //this function runs once upon startup
 function processData(){
   datalist=sortListAscending(dataset);
   sample=datalist.map(parseFloat);
+    console.log(datalist[0])
   xmin=floor(datalist[0]);                  //integer value thats lower than data's min
   xmax=ceil(datalist[datalist.length-1]);    //integer value.  
   binWidth=((xmax-xmin)/numBars);      //INTERVAL of data values in each bin
