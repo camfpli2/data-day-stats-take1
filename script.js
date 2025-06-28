@@ -17,7 +17,6 @@ var upperCuttoffs;
 var dtitle;
 var whichLabels;
 var whichXLabels;
-//var whichTicks;
 
 function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
