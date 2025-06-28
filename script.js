@@ -62,7 +62,7 @@ function setup() {          //this function runs once upon startup
 function processData(){
     for(var g=0;g<dataset.length;g++){
         if(dataset[g]!==''){
-            datalist.push(parseFloat(dataset[g]));
+            datalist.push((dataset[g]));
         }
     }
     console.log(datalist);
