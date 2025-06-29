@@ -298,7 +298,7 @@ function axes(){
     if(numBars<=50){line(g,715,g,725);}
 
     noStroke();
-    if(xPixelTracker>120||xPixelTracker===0){
+    if(xPixelTracker>90||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
         if(numBars>50){    
             stroke(255,30,40);
