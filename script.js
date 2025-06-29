@@ -50,9 +50,7 @@ function setup() {          //this function runs once upon startup
   var possTitle=isNumber(dataset[0]);
   if (possTitle===false){
        dtitle = dataset.shift();
-      console.log(dtitle);
   }
-        console.log(dataset);
 
   processData();  
   calculateFiveNumber();
