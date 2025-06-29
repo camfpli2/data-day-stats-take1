@@ -40,6 +40,8 @@ function TortillaDiametersPage(){
     controls.push(new control(345,5,150,60,"Histogram",true,butColor));
     controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
     controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
+    controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
+    controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
 }
 function NassauCountyHomePricesPage(){
@@ -387,12 +389,10 @@ class control{
         getYScale();
         axes();
         histogram();
-        boxplot();
         histogramSpecs();
       }
       else if(this.txt==="INC."){
         numBars++;
-        console.log(numBars);
         background(240);
         binWidth=((xmax-xmin)/numBars);      //INTERVAL of data values in each bin
         drawControls();
@@ -400,7 +400,6 @@ class control{
         getYScale();
         axes();
         histogram();
-        boxplot();
         histogramSpecs();
       }
      else if(this.txt==="Enter New Data"){
@@ -422,6 +421,11 @@ class control{
         data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
         whichColumn=1;
         TortillaDiametersPage();
+    }
+    else if(this.txt==="Boxplot"){
+        this.selected=true;
+        boxplot();
+        drawControls();
     }
     else if(this.txt==="Histogram"&&this.selected===false){
         dataset=data.getColumn(whichColumn);
