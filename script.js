@@ -26,11 +26,13 @@ function preload(){
    // data = loadTable("greenhouse-gas-emissions.csv", "csv");
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
   //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
-  data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+  //data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
 }
 
 function whistlePricesPage() {
-    
+    background(240);
+    controls=[];
+    //controls.push(new control())
     
 }
 
@@ -366,6 +368,10 @@ class control{
          dataset=[];
          editingScreen();
          
+    }
+    else if(this.txt==="Whistle Prices"){
+        data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+        whistlePricesPage();
     }
   }
 }
