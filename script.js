@@ -19,6 +19,7 @@ var upperCuttoffs;
 var dtitle;
 var whichLabels;
 var whichXLabels;
+var waitingCounter;
 
 function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
@@ -26,17 +27,27 @@ function preload(){
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
   //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
   data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
-data.onload = function() {
-  yourFunctionAfterTableLoad();
-};
+}
 
-
+function whistlePricesPage() {
+    
     
 }
 
-function yourFunctionAfterTableLoad() {
-  console.log("Page and all resources are fully loaded.");
-  // Perform actions on the table elements
+function homePage(){
+    
+    
+}
+
+function dataFilesPage(){
+    background(240);
+    controls=[];
+    controls.push(new control(20,120,400,72,"Tortilla Diameters",true,butColor));
+    controls.push(new control(20,220,400,72,"Nassau County Home Prices",true,butColor));
+    controls.push(new control(20,320,400,72,"Whistle Prices",true,butColor));
+    controls.push(new control(20,420,400,72,"Greenhouse Gas Emissions",true,butColor));
+    drawControls();
+    
 }
 
 function setup() {          //this function runs once upon startup
@@ -46,22 +57,22 @@ function setup() {          //this function runs once upon startup
   controls[1]=new control(170,5,160,72,"Enter New Data",true,butColor);
   controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
   controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
-  dataset=data.getColumn(1);
-  var possTitle=isNumber(dataset[0]);
-  if (possTitle===false){
-       dtitle = dataset.shift();
-  }
+  // dataset=data.getColumn(1);
+  // var possTitle=isNumber(dataset[0]);
+  // if (possTitle===false){
+  //      dtitle = dataset.shift();
+  // }
 
-  processData();  
-  calculateFiveNumber();
-  drawControls();
-  grouper();
-  getYScale();
-  axes();
-  histogram();
-  boxplot();
-  histogramSpecs();
-  
+  // processData();  
+  // calculateFiveNumber();
+  // drawControls();
+  // grouper();
+  // getYScale();
+  // axes();
+  // histogram();
+  // histogramSpecs();
+  // boxplot();
+    dataFilesPage();
 }
 
 function processData(){
@@ -289,13 +300,6 @@ function editingScreen(){
   textSize(20);
     drawControls();
 }
-
-
-
-
-
-
-
 
 
 
