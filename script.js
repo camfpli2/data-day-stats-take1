@@ -31,6 +31,17 @@ function preload(){
   //data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
 }
 
+function TortillaDiametersPage(){
+    background(240);
+    controls=[];
+    controls.push(new control(5,5,150,60,"Stem",true,butColor));
+    controls[0].selected=true;
+    controls.push(new control(175,5,150,60,"See/Edit Data",true,butColor));
+    controls.push(new control(345,5,150,60,"Histogram",true,butColor));
+    controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
+    controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
+    drawControls();
+}
 function NassauCountyHomePricesPage(){
     background(240);
     controls=[];
@@ -40,6 +51,8 @@ function NassauCountyHomePricesPage(){
     controls.push(new control(345,5,150,60,"Histogram",true,butColor));
     controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
     controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
+    controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
+    controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
 }
 
@@ -52,6 +65,8 @@ function whistlePricesPage() {
     controls.push(new control(345,5,150,60,"Histogram",true,butColor));
     controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
     controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
+    controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
+    controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
     
 }
@@ -68,6 +83,8 @@ function dataFilesPage(){
     controls.push(new control(20,220,400,72,"Nassau County Home Prices",true,butColor));
     controls.push(new control(20,320,400,72,"Whistle Prices",true,butColor));
     controls.push(new control(20,420,400,72,"Greenhouse Gas Emissions",true,butColor));
+    controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
+    controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
     
 }
@@ -400,6 +417,11 @@ class control{
         data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
         whichColumn=0;
         NassauCountyHomePricesPage();
+    }
+    else if(this.txt==="Tortilla Diameters"){
+        data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
+        whichColumn=1;
+        TortillaDiametersPage();
     }
     else if(this.txt==="Histogram"&&this.selected===false){
         dataset=data.getColumn(whichColumn);
