@@ -26,11 +26,18 @@ function preload(){
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
   //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
   data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+data.window.onload = function() {
+  yourFunctionAfterTableLoad();
+};
+
 
     
 }
 
-
+function yourFunctionAfterTableLoad() {
+  console.log("Page and all resources are fully loaded.");
+  // Perform actions on the table elements
+}
 
 function setup() {          //this function runs once upon startup
   createCanvas(1400, 800);
