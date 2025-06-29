@@ -21,6 +21,7 @@ var dtitle;
 var whichLabels;
 var whichXLabels;
 var waitingCounter;
+var whichColumn;  //variable that will be column to be loaded, diff for diff datasets
 
 function preload(){
     //data = loadTable("1ex60beans.csv", "csv");
@@ -30,13 +31,25 @@ function preload(){
   //data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
 }
 
+function NassauCountyHomePricesPage(){
+    background(240);
+    controls=[];
+    controls.push(new control(5,5,150,60,"Stem",true,butColor));
+    controls.push(new control(175,5,150,60,"See/Edit Data",true,butColor));
+    controls.push(new control(345,5,150,60,"Histogram",true,butColor));
+    controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
+    controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
+    drawControls();
+}
+
 function whistlePricesPage() {
     background(240);
     controls=[];
-    controls.push(new control(5,5,150,60,"See/Edit Data",true,butColor));
-    controls.push(new control(175,5,150,60,"Histogram",true,butColor));
-    controls.push(new control(345,5,150,60,"Boxplot",true,butColor));
-    controls.push(new control(515,5,150,60,"Mod Boxplot",true,butColor));
+    controls.push(new control(5,5,150,60,"Stem",true,butColor));
+    controls.push(new control(175,5,150,60,"See/Edit Data",true,butColor));
+    controls.push(new control(345,5,150,60,"Histogram",true,butColor));
+    controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
+    controls.push(new control(685,5,150,60,"Mod Boxplot",true,butColor));
     drawControls();
     
 }
@@ -341,6 +354,7 @@ class control{
   constructor(x,y,w,h,txt,there, rgb){
     this.x=x; this.y=y; this.w=w; this.h=h; this.txt=txt; this.there=there; this.rgb=rgb;
       this.selected=false;
+      
   }
   
   tapit(){
@@ -377,10 +391,16 @@ class control{
     }
     else if(this.txt==="Whistle Prices"){
         data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
+        whichColumn=1;
         whistlePricesPage();
     }
+    else if(this.txt==="Nassau County Home Prices"){
+        data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
+        whichColumn=0;
+        NassauCountyHomePricesPage();
+    }
     else if(this.txt==="Histogram"&&this.selected===false){
-        dataset=data.getColumn(1);
+        dataset=data.getColumn(whichColumn);
         var possTitle=isNumber(dataset[0]);
         if (possTitle===false){
            dtitle = dataset.shift();
