@@ -35,6 +35,7 @@ function NassauCountyHomePricesPage(){
     background(240);
     controls=[];
     controls.push(new control(5,5,150,60,"Stem",true,butColor));
+    controls[0].selected=true;
     controls.push(new control(175,5,150,60,"See/Edit Data",true,butColor));
     controls.push(new control(345,5,150,60,"Histogram",true,butColor));
     controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
@@ -46,6 +47,7 @@ function whistlePricesPage() {
     background(240);
     controls=[];
     controls.push(new control(5,5,150,60,"Stem",true,butColor));
+    controls[0].selected=true;
     controls.push(new control(175,5,150,60,"See/Edit Data",true,butColor));
     controls.push(new control(345,5,150,60,"Histogram",true,butColor));
     controls.push(new control(515,5,150,60,"Boxplot",true,butColor));
@@ -405,6 +407,7 @@ class control{
         if (possTitle===false){
            dtitle = dataset.shift();
          }
+          controls[0].selected=false;
           this.selected=true;
           processData();  
           calculateFiveNumber();
