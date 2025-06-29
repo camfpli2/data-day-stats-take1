@@ -26,7 +26,7 @@ function preload(){
    //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
   //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
   data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
-window.onload = function() {
+data.onload = function() {
   yourFunctionAfterTableLoad();
 };
 
