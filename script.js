@@ -32,7 +32,11 @@ function preload(){
 function whistlePricesPage() {
     background(240);
     controls=[];
-    //controls.push(new control())
+    controls.push(new control(5,5,100,60,"See/Edit Data",true,butColor));
+    controls.push(new control(125,5,100,60,"Histogram",true,butColor));
+    controls.push(new control(245,5,100,60,"Boxplot",true,butColor));
+    controls.push(new control(365,5,100,60,"Mod. Boxplot",true,butColor));
+    drawControls();
     
 }
 
