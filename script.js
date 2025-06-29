@@ -1,5 +1,5 @@
 var butColor=[210,225,225];
-var selectedbutColor=[255,125,145];
+var selectedbutColor=[255,185,195];
 var datalist;
 var xmin;
 var xmax;
