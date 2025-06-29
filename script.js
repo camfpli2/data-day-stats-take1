@@ -379,7 +379,7 @@ class control{
         data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
         whistlePricesPage();
     }
-    else if(this.txt==="Histogram"){
+    else if(this.txt==="Histogram"&&this.selected===false){
         dataset=data.getColumn(1);
         var possTitle=isNumber(dataset[0]);
         if (possTitle===false){
