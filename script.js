@@ -1,4 +1,5 @@
 var butColor=[210,225,225];
+var selectedbutColor=[255,125,145];
 var datalist;
 var xmin;
 var xmax;
@@ -339,6 +340,7 @@ function keyTyped() {     //this function will run anytime the user types any ke
 class control{
   constructor(x,y,w,h,txt,there, rgb){
     this.x=x; this.y=y; this.w=w; this.h=h; this.txt=txt; this.there=there; this.rgb=rgb;
+      this.selected=false;
   }
   
   tapit(){
@@ -383,6 +385,7 @@ class control{
         if (possTitle===false){
            dtitle = dataset.shift();
          }
+          this.selected=true;
           processData();  
           calculateFiveNumber();
           drawControls();
@@ -396,7 +399,8 @@ class control{
 }
   
   drawit(){
-    fill(this.rgb);
+    if(this.selected){fill(selectedbutColor)}
+    else{fill(this.rgb);}
     strokeWeight(1);
     stroke(255,30,40);
     rect(this.x, this.y, this.w, this.h, 4);
