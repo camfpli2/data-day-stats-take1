@@ -59,10 +59,10 @@ function dataFilesPage(){
 function setup() {          //this function runs once upon startup
   createCanvas(1400, 800);
   background(240);
-  controls[0]=new control(5,5,160,72,"Home",true,butColor);
-  controls[1]=new control(170,5,160,72,"Enter New Data",true,butColor);
-  controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
-  controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
+  // controls[0]=new control(5,5,160,72,"Home",true,butColor);
+  // controls[1]=new control(170,5,160,72,"Enter New Data",true,butColor);
+  // controls[2]=new control(1200,150,80,48,"DEC.",true,butColor);
+  // controls[3]=new control(1300,150,80,48,"INC.",true,butColor);
   // dataset=data.getColumn(1);
   // var possTitle=isNumber(dataset[0]);
   // if (possTitle===false){
@@ -376,6 +376,21 @@ class control{
     else if(this.txt==="Whistle Prices"){
         data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
         whistlePricesPage();
+    }
+    else if(this.txt==="Histogram"){
+        dataset=data.getColumn(1);
+        var possTitle=isNumber(dataset[0]);
+        if (possTitle===false){
+           dtitle = dataset.shift();
+         }
+          processData();  
+          calculateFiveNumber();
+          drawControls();
+          grouper();
+          getYScale();
+          axes();
+          histogram();
+          histogramSpecs();
     }
   }
 }
