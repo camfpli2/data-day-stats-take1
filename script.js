@@ -34,8 +34,8 @@ function whistlePricesPage() {
     controls=[];
     controls.push(new control(5,5,150,60,"See/Edit Data",true,butColor));
     controls.push(new control(175,5,150,60,"Histogram",true,butColor));
-    controls.push(new control(295,5,150,60,"Boxplot",true,butColor));
-    controls.push(new control(415,5,100,60,"Mod. Boxplot",true,butColor));
+    controls.push(new control(345,5,150,60,"Boxplot",true,butColor));
+    controls.push(new control(515,5,100,60,"Mod. Boxplot",true,butColor));
     drawControls();
     
 }
