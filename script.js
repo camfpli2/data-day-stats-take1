@@ -21,6 +21,7 @@ var dtitle;
 var whichLabels;
 var whichXLabels;
 var waitingCounter;
+var boxplotSelected=false;
 var whichColumn;  //variable that will be column to be loaded, diff for diff datasets
 
 function preload(){
@@ -122,10 +123,8 @@ function processData(){
             datalist.push(parseFloat(dataset[g]));
         }
     }
-    console.log(datalist);
   datalist=sortListAscending(datalist);
   sample=datalist.map(parseFloat);
-  //console.log(sample)
   xmin=floor(datalist[0]);                  //integer value thats lower than data's min
   xmax=ceil(datalist[datalist.length-1]);    //integer value.  
   binWidth=((xmax-xmin)/numBars);      //INTERVAL of data values in each bin
@@ -244,7 +243,8 @@ function histogram(){
   fill(140,200,200);
   for(z=0;z<numBars;z++){
     rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]));
-  }  
+  }
+    if(boxplotSelected){boxplot();}
 }
 
 
@@ -423,6 +423,7 @@ class control{
         TortillaDiametersPage();
     }
     else if(this.txt==="Boxplot"){
+        boxplotSelected=true;
         this.selected=true;
         boxplot();
         drawControls();
