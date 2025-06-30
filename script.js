@@ -33,18 +33,17 @@ var greenhouseStemImage;
 function preload(){
 }
 
-function adjustImageDimensions(){
-  for(var v=0;v<questions.length;v++){
-    if((questions[v].width>wdth-40)||(questions[v].height>hgt-130)){      //too tall or too wide
-      if(questions[v].width/(wdth-40)>questions[v].height/(hgt-130)){    //%wise, wider than taller
-         questions[v].resize(wdth-40,0);
+function adjustImageDimensions(image){
+    if((image.width>wdth-40)||(image.height>hgt-130)){      //too tall or too wide
+      if(image.width/(wdth-40)>image.height/(hgt-130)){    //%wise, wider than taller
+         image.resize(wdth-40,0);
       }
       else{                                               //%wise, taller than wider
-         questions[v].resize(0,hgt-130);
+         image.resize(0,hgt-130);
       }
     }
-  }
 }
+
 
 function TortillaDiametersPage(){
     background(240);
@@ -74,6 +73,7 @@ function NassauCountyHomePricesPage(){
 }
 
 function whistlePricesPage() {
+    adjustImageDimensions(whistleStemImage);
     background(240);
     controls=[];
     controls.push(new control(5,5,150,60,"Stem",true,butColor));
@@ -85,6 +85,7 @@ function whistlePricesPage() {
     controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
     controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
+    image(whistleStemImage,10,100);
     
 }
 
