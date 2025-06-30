@@ -319,6 +319,7 @@ function axes(){
     }
   }
   textAlign(CENTER,CENTER);
+  text(dtitle,wdth/2-50,hgt-30);
 
   var counter=0;
   var xPixelTracker=0;
@@ -330,7 +331,6 @@ function axes(){
 
     noStroke();
 
-    text(dtitle,wdth/2-50,hgt-30);
     if(xPixelTracker>90||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
         if(numBars>50){    
@@ -342,7 +342,7 @@ function axes(){
         }
     counter++;
     pixCounter++;  
-    xPixelTracker+=pixCounter*(800/numBars);
+    xPixelTracker+=(800/numBars);
   }
   for (var j=150;j<950;j+=(80/numBars)){     //10 minor grid lines between the labelled values
     stroke(255,30,40);
