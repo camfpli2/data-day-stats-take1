@@ -1,5 +1,5 @@
-var butColor=[210,225,225];
-//var butColor=[0];
+//var butColor=[210,225,225];
+var butColor=[0];
 
 var selectedbutColor=[255,185,195];
 
@@ -298,7 +298,7 @@ function axes(){
   rect(120,120,880,600);
   push();
   translate(100,100);
-  rotate( radians(180) );
+  rotate( radians(270) );
   fill(230,10,10);
   text("ROTATE ME", 0,0);
   pop();
