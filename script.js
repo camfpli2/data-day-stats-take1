@@ -1,4 +1,6 @@
-var butColor=[210,225,225];
+//var butColor=[210,225,225];
+var butColor=[0];
+
 var selectedbutColor=[255,185,195];
 
 var wdth;                                 //browser width and height
