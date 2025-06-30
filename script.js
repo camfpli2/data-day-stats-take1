@@ -61,7 +61,7 @@ function TortillaDiametersPage(){
     controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
     controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
-    image(tortillaStemImage);
+    image(tortillaStemImage,10,100);
 }
 function NassauCountyHomePricesPage(){
     background(240);
