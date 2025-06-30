@@ -1,5 +1,7 @@
 var butColor=[210,225,225];
 var selectedbutColor=[255,185,195];
+var wdth;                                 //browser width and height
+var hgt;
 var datalist;
 var xmin;
 var xmax;
@@ -29,6 +31,19 @@ var tortillaStemImage;
 var greenhouseStemImage;
 
 function preload(){
+}
+
+function adjustImageDimensions(){
+  for(var v=0;v<questions.length;v++){
+    if((questions[v].width>wdth-40)||(questions[v].height>hgt-130)){      //too tall or too wide
+      if(questions[v].width/(wdth-40)>questions[v].height/(hgt-130)){    //%wise, wider than taller
+         questions[v].resize(wdth-40,0);
+      }
+      else{                                               //%wise, taller than wider
+         questions[v].resize(0,hgt-130);
+      }
+    }
+  }
 }
 
 function TortillaDiametersPage(){
@@ -96,6 +111,8 @@ function dataFilesPage(){     //pretty much chapter 1 home page
 }
 
 function setup() {          //this function runs once upon startup
+    wdth=windowWidth;
+    hgt=windowHeight;
   createCanvas(1400, 800);
   background(240);
   // controls[0]=new control(5,5,160,72,"Home",true,butColor);
