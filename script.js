@@ -300,7 +300,7 @@ function axes(){
   //translate(100,100);
   rotate( radians(270) );
   fill(230,10,10);
-  text("FREQUENCY", 5,250);
+  text("FREQUENCY", 250,5);
   pop();
   strokeWeight(4);
   stroke(255,30,40);
