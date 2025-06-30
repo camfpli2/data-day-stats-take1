@@ -455,6 +455,7 @@ class control{
         if (possTitle===false){
            dtitle = dataset.shift();
          }
+          background(240);
           controls[0].selected=false;
           this.selected=true;
           processData();  
