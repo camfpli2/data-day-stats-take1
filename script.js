@@ -112,8 +112,8 @@ function dataFilesPage(){     //pretty much chapter 1 home page
 }
 
 function setup() {          //this function runs once upon startup
-    wdth=windowWidth;
-    hgt=windowHeight;
+  wdth=windowWidth;
+  hgt=windowHeight;
   createCanvas(1400, 800);
   background(240);
   // controls[0]=new control(5,5,160,72,"Home",true,butColor);
@@ -430,7 +430,7 @@ class control{
     }
     else if(this.txt==="Whistle Prices"){
         data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
-        whichColumn=1;
+        whichColumn=0;
         whistlePricesPage();
     }
     else if(this.txt==="Nassau County Home Prices"){
