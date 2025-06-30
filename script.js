@@ -79,10 +79,10 @@ function homePage(){
 }
 
 function dataFilesPage(){     //pretty much chapter 1 home page
-    whistleStemImage=loadImage("whistle-prices-stem.png", "png");
-    nassauStemImage=loadImage();
-    greenhouseStemImage=loadImage();
-    tortillaStemImage=loadImage();
+    whistleStemImage=loadImage("whistle-prices-stem.png");
+    // nassauStemImage=loadImage();
+    // greenhouseStemImage=loadImage();
+    // tortillaStemImage=loadImage();
     background(240);
     controls=[];
     controls.push(new control(20,120,400,72,"Tortilla Diameters",true,butColor));
