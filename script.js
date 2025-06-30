@@ -298,7 +298,7 @@ function axes(){
   rect(120,120,880,600);
   push();
   translate(100,100);
-  rotate( degrees(270) );
+  rotate( radians(3PI/2) );
   fill(230,10,10);
   text("ROTATE ME", 0,0);
   pop();
