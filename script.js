@@ -1,5 +1,5 @@
-//var butColor=[210,225,225];
-var butColor=[0];
+var butColor=[210,225,225];
+//var butColor=[0];
 
 var selectedbutColor=[255,185,195];
 
@@ -49,6 +49,7 @@ function adjustImageDimensions(image){
 
 
 function TortillaDiametersPage(){
+    adjustImageDimensions(tortillaStemImage);
     background(240);
     controls=[];
     controls.push(new control(5,5,150,60,"Stem",true,butColor));
@@ -60,6 +61,7 @@ function TortillaDiametersPage(){
     controls.push(new control(1200,150,80,48,"DEC.",true,butColor));
     controls.push(new control(1300,150,80,48,"INC.",true,butColor));
     drawControls();
+    image(tortillaStemImage);
 }
 function NassauCountyHomePricesPage(){
     background(240);
@@ -101,7 +103,7 @@ function dataFilesPage(){     //pretty much chapter 1 home page
     whistleStemImage=loadImage("whistle-prices-stem.png");
     // nassauStemImage=loadImage();
     // greenhouseStemImage=loadImage();
-    // tortillaStemImage=loadImage();
+    tortillaStemImage=loadImage("tortilla-diameters-stem.png");
     background(240);
     controls=[];
     controls.push(new control(20,120,400,72,"Tortilla Diameters",true,butColor));
