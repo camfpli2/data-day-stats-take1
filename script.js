@@ -1,5 +1,5 @@
-var butColor=[210,225,225];
-//var butColor=[0];
+//var butColor=[210,225,225];
+var butColor=[0];
 
 var selectedbutColor=[255,185,195];
 
@@ -329,6 +329,8 @@ function axes(){
     if(numBars<=50){line(g,715,g,725);}
 
     noStroke();
+
+    text(dtitle,300,600);
     if(xPixelTracker>90||xPixelTracker===0){
         text(numberRight(xmin+counter*binWidth),g,740);
         if(numBars>50){    
