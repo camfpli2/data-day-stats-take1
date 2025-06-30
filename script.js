@@ -310,6 +310,7 @@ function axes(){
   textAlign(RIGHT,CENTER);
   for(var d=0;d<=maxFreq;d++){
     if(d%whichLabels===0){ 
+       fill(230,10,10);
        stroke(255,30,40);
        strokeWeight(2);
        line(115,718-d*yScale,125,718-d*yScale);
