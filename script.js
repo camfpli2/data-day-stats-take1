@@ -23,13 +23,12 @@ var whichXLabels;
 var waitingCounter;
 var boxplotSelected=false;
 var whichColumn;  //variable that will be column to be loaded, diff for diff datasets
+var whistleStemImage;
+var nassauStemImage;
+var tortillaStemImage;
+var greenhouseStemImage;
 
 function preload(){
-    //data = loadTable("1ex60beans.csv", "csv");
-   // data = loadTable("greenhouse-gas-emissions.csv", "csv");
-   //data=loadTable("Nassau_County_Home_Prices_2025.csv", "csv");
-  //  data=loadTable("Tortilla_Diameters_Production_Data.csv", "csv");
-  //data=loadTable("Whistle_Price_Sample_and_Population.csv", "csv");
 }
 
 function TortillaDiametersPage(){
@@ -79,7 +78,11 @@ function homePage(){
     
 }
 
-function dataFilesPage(){
+function dataFilesPage(){     //pretty much chapter 1 home page
+    whistleStemImage=loadImage("whistle-prices-stem.png", "png");
+    nassauStemImage=loadImage();
+    greenhouseStemImage=loadImage();
+    tortillaStemImage=loadImage();
     background(240);
     controls=[];
     controls.push(new control(20,120,400,72,"Tortilla Diameters",true,butColor));
