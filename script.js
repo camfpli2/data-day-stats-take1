@@ -296,8 +296,12 @@ function grouper(){
 function axes(){
   fill(250);
   rect(120,120,880,600);
-  
-  fill(230,10,10);
+  	push();
+    translate(100,100);
+    rotate( radians(frameCount) );
+      fill(230,10,10);
+    text("ROTATE ME", 0,0);
+	pop();
   strokeWeight(4);
   stroke(255,30,40);
   line(120,120,120,720);
