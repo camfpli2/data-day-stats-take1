@@ -166,7 +166,7 @@ function isNumber(variable) {
 
 function histogramSpecs(){
   textAlign(LEFT,TOP);
-  fill(255,90,1000);
+  fill(255,90,100);
   noStroke();
   textSize(30);
   text("Bars: "+numBars,1050,150);
@@ -271,8 +271,9 @@ function getYScale(){
 
 function histogram(){
   fill(140,200,200);
+    stroke(0,30,200);
   for(z=0;z<numBars;z++){
-    rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]));
+    rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]),4);
   }
     if(boxplotSelected){boxplot();}
 }
