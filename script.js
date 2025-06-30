@@ -271,9 +271,8 @@ function getYScale(){
 
 function histogram(){
   fill(140,200,200);
-    stroke(0,30,200);
   for(z=0;z<numBars;z++){
-    rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]),4);
+    rect(150+z*(800/numBars),718-(yScale*freqs[z]),800/numBars,(yScale*freqs[z]));
   }
     if(boxplotSelected){boxplot();}
 }
@@ -300,6 +299,7 @@ function grouper(){
 
 function axes(){
   fill(250);
+  stroke(0,30,200);
   rect(120,120,880,600);
   push();
   //translate(100,100);
